@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 const Hero = () => {
     return (
-        <section style={{
+        <section id="home" style={{
             height: '100vh',
             display: 'flex',
             alignItems: 'center',

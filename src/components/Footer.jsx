@@ -29,7 +29,10 @@ const Footer = () => {
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem', color: 'var(--text-muted)' }}>
                             <a href="#home">Home</a>
                             <a href="#programs">Programs</a>
+                            <a href="#bmi">BMI Calculator</a>
+                            <a href="#pricing">Pricing</a>
                             <a href="#bodybuilders">Legends</a>
+                            <a href="#reviews">Reviews</a>
                             <Link to="/login">Login</Link>
                         </div>
                     </div>

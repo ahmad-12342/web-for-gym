@@ -25,7 +25,7 @@ const reviews = [
 
 const Testimonials = () => {
     return (
-        <section style={{ padding: '5rem 0', background: 'var(--bg-dark)' }}>
+        <section id="reviews" style={{ padding: '5rem 0', background: 'var(--bg-dark)' }}>
             <div className="container">
                 <h2 style={{ textAlign: 'center', fontSize: '3rem', marginBottom: '3rem' }}>CLIENT <span style={{ color: 'var(--primary)' }}>REVIEWS</span></h2>
                 <div style={{

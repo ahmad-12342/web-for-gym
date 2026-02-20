@@ -25,15 +25,17 @@ const Navbar = () => {
         <span className="brand">FITNESS ARENA</span>
       </Link>
 
-      {/* Desktop Menu */}
       <div className="desktop-menu" style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
-        <Link to="/" style={{ color: 'var(--text-main)', fontWeight: '500' }}>Home</Link>
+        <a href="#home" style={{ color: 'var(--text-main)', fontWeight: '500' }}>Home</a>
         <a href="#programs" style={{ color: 'var(--text-main)', fontWeight: '500' }}>Programs</a>
+        <a href="#bmi" style={{ color: 'var(--text-main)', fontWeight: '500' }}>BMI</a>
+        <a href="#pricing" style={{ color: 'var(--text-main)', fontWeight: '500' }}>Pricing</a>
         <a href="#bodybuilders" style={{ color: 'var(--text-main)', fontWeight: '500' }}>Legends</a>
-        <Link to="/login" style={{ 
-          background: 'var(--primary)', 
-          color: 'black', 
-          padding: '0.5rem 1.5rem', 
+        <a href="#reviews" style={{ color: 'var(--text-main)', fontWeight: '500' }}>Reviews</a>
+        <Link to="/login" style={{
+          background: 'var(--primary)',
+          color: 'black',
+          padding: '0.5rem 1.5rem',
           borderRadius: '5px',
           fontWeight: 'bold'
         }}>Login</Link>

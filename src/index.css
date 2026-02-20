@@ -1,10 +1,10 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;700;900&display=swap');
 
 :root {
   --bg-dark: #0a0a0a;
   --bg-card: #151515;
-  --primary: #ccff00; /* Neon Lime */
+  --primary: #ccff00;
+  /* Neon Lime */
   --primary-hover: #a3cc00;
   --text-main: #ffffff;
   --text-muted: #a0a0a0;
@@ -12,10 +12,15 @@
   --border: rgba(255, 255, 255, 0.1);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  transition: all 0.3s ease;
 }
 
 body {
@@ -26,7 +31,10 @@ body {
   line-height: 1.6;
 }
 
-h1, h2, h3, .brand {
+h1,
+h2,
+h3,
+.brand {
   font-family: 'Bebas Neue', cursiv;
   letter-spacing: 2px;
 }

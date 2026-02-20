@@ -26,7 +26,7 @@ const BMICalculator = () => {
     };
 
     return (
-        <section style={{ padding: '5rem 0', background: 'var(--bg-dark)' }}>
+        <section id="bmi" style={{ padding: '5rem 0', background: 'var(--bg-dark)' }}>
             <div className="container" style={{ display: 'flex', flexWrap: 'wrap', gap: '3rem', alignItems: 'center' }}>
                 <div style={{ flex: '1', minWidth: '300px' }}>
                     <h2 style={{ fontSize: '3rem', marginBottom: '1.5rem' }}>CALCULATE YOUR <span style={{ color: 'var(--primary)' }}>BMI</span></h2>
