@@ -6,12 +6,14 @@ import Login from './pages/Login'
 import Signup from './pages/Signup'
 import PreLoader from './components/PreLoader'
 import ScrollWidgets from './components/ScrollWidgets'
+import CustomCursor from './components/CustomCursor'
 import './index.css'
 
 function App() {
   return (
     <Router>
       <PreLoader>
+        <CustomCursor />
         <ScrollWidgets />
         <Routes>
           <Route path="/" element={<Home />} />
