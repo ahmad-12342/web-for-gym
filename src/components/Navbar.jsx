@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Dumbbell } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import Logo from './Logo';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -33,7 +34,7 @@ const Navbar = () => {
     }}>
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
         <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'var(--primary)', fontSize: '1.5rem', fontWeight: 'bold' }}>
-          <Dumbbell size={32} />
+          <Logo size={32} />
           <span className="brand">FITNESS ARENA</span>
         </Link>
         <div style={{ fontSize: '0.7rem', display: 'flex', gap: '10px', marginTop: '2px', color: 'var(--text-muted)' }}>

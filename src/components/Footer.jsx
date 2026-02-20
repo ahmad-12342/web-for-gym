@@ -1,6 +1,6 @@
-
 import React from 'react';
 import { Mail, Phone, MapPin, Instagram, Facebook, Twitter } from 'lucide-react';
+import Logo from './Logo';
 
 const Footer = () => {
     return (
@@ -13,7 +13,10 @@ const Footer = () => {
                     marginBottom: '3rem'
                 }}>
                     <div>
-                        <h3 style={{ color: 'var(--primary)', fontSize: '2rem', marginBottom: '1.5rem' }}>FITNESS ARENA</h3>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', marginBottom: '1.5rem' }}>
+                            <Logo size={40} />
+                            <h3 style={{ color: 'var(--primary)', fontSize: '1.8rem', margin: 0 }}>FITNESS ARENA</h3>
+                        </div>
                         <p style={{ color: 'var(--text-muted)', marginBottom: '1.5rem' }}>
                             We provide the best environment and training programs to help you reach your maximum potential.
                         </p>
