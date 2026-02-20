@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Star } from 'lucide-react';
+import { Star, User as UserIcon } from 'lucide-react';
 
 const reviews = [
     {
@@ -10,16 +10,16 @@ const reviews = [
         image: "https://images.unsplash.com/photo-1506794778242-aff80849e756?q=80&w=1887&auto=format&fit=crop"
     },
     {
-        name: "John Doe",
+        name: "Hassan Khan",
         review: "The equipment is top-notch and the BMI calculator is so helpful.",
         stars: 5,
-        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1887&auto=format&fit=crop"
+        image: null
     },
     {
-        name: "Sara Khan",
+        name: "Shoaib Qureshi",
         review: "Best transformation center. I lost 10kg in 3 months successfully.",
-        stars: 4,
-        image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1887&auto=format&fit=crop"
+        stars: 5,
+        image: null
     }
 ];
 
@@ -35,11 +35,27 @@ const Testimonials = () => {
                 }}>
                     {reviews.map((rev, index) => (
                         <div key={index} className="glass" style={{ padding: '2rem', textAlign: 'center' }}>
-                            <img
-                                src={rev.image}
-                                alt={rev.name}
-                                style={{ width: '80px', height: '80px', borderRadius: '50%', objectFit: 'cover', marginBottom: '1.5rem', border: '2px solid var(--primary)' }}
-                            />
+                            {rev.image ? (
+                                <img
+                                    src={rev.image}
+                                    alt={rev.name}
+                                    style={{ width: '80px', height: '80px', borderRadius: '50%', objectFit: 'cover', marginBottom: '1.5rem', border: '2px solid var(--primary)' }}
+                                />
+                            ) : (
+                                <div style={{
+                                    width: '80px',
+                                    height: '80px',
+                                    borderRadius: '50%',
+                                    background: 'var(--glass)',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    margin: '0 auto 1.5rem',
+                                    border: '1px solid var(--primary)'
+                                }}>
+                                    <UserIcon size={40} color="var(--primary)" />
+                                </div>
+                            )}
                             <p style={{ color: 'var(--text-muted)', fontStyle: 'italic', marginBottom: '1.5rem' }}>"{rev.review}"</p>
                             <div style={{ display: 'flex', justifyContent: 'center', gap: '5px', marginBottom: '1rem' }}>
                                 {[...Array(5)].map((_, i) => (
