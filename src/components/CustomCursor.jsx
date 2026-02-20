@@ -1,25 +1,28 @@
-
 import React, { useState, useEffect } from 'react';
 import { motion, useSpring } from 'framer-motion';
 
 const CustomCursor = () => {
-    const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
     const [isHovering, setIsHovering] = useState(false);
+
+    // Optimized spring physics for maximum smoothness
+    const x = useSpring(0, { stiffness: 400, damping: 50 });
+    const y = useSpring(0, { stiffness: 400, damping: 50 });
+
+    // Trailing ring with more "weight" for liquid feel
+    const ringX = useSpring(0, { stiffness: 100, damping: 25 });
+    const ringY = useSpring(0, { stiffness: 100, damping: 25 });
 
     useEffect(() => {
         const mouseMove = (e) => {
-            setMousePosition({
-                x: e.clientX,
-                y: e.clientY
-            });
+            x.set(e.clientX);
+            y.set(e.clientY);
+            ringX.set(e.clientX);
+            ringY.set(e.clientY);
         };
 
         const mouseOver = (e) => {
-            if (e.target.tagName === 'BUTTON' || e.target.tagName === 'A' || e.target.closest('a') || e.target.closest('button')) {
-                setIsHovering(true);
-            } else {
-                setIsHovering(false);
-            }
+            const isClickable = e.target.closest('button, a, input, [role="button"]');
+            setIsHovering(!!isClickable);
         };
 
         window.addEventListener("mousemove", mouseMove);
@@ -29,49 +32,49 @@ const CustomCursor = () => {
             window.removeEventListener("mousemove", mouseMove);
             window.removeEventListener("mouseover", mouseOver);
         };
-    }, []);
-
-    const springConfig = { damping: 25, stiffness: 150 };
-    const cursorX = useSpring(mousePosition.x, springConfig);
-    const cursorY = useSpring(mousePosition.y, springConfig);
+    }, [x, y, ringX, ringY]);
 
     return (
         <>
-            {/* The trailing ring */}
+            {/* The trailing liquid ring */}
             <motion.div
                 style={{
                     position: 'fixed',
                     left: 0,
                     top: 0,
-                    width: isHovering ? 60 : 40,
-                    height: isHovering ? 60 : 40,
+                    width: isHovering ? 50 : 35,
+                    height: isHovering ? 50 : 35,
                     borderRadius: '50%',
-                    border: '2px solid var(--primary)',
-                    backgroundColor: isHovering ? 'rgba(204, 255, 0, 0.1)' : 'transparent',
+                    border: '1.5px solid var(--primary)',
+                    backgroundColor: isHovering ? 'var(--primary)' : 'transparent',
                     pointerEvents: 'none',
                     zIndex: 9999,
-                    translateX: cursorX,
-                    translateY: cursorY,
-                    x: '-50%',
-                    y: '-50%',
-                    transition: 'width 0.3s, height 0.3s, background-color 0.3s'
+                    x: ringX,
+                    y: ringY,
+                    translateX: '-50%',
+                    translateY: '-50%',
+                    mixBlendMode: isHovering ? 'difference' : 'normal',
+                    opacity: 0.6
                 }}
+                transition={{ type: 'spring', stiffness: 200, damping: 30 }}
             />
 
-            {/* The center dot */}
+            {/* The sharp center point */}
             <motion.div
                 style={{
                     position: 'fixed',
                     left: 0,
                     top: 0,
-                    width: 8,
-                    height: 8,
+                    width: 6,
+                    height: 6,
                     backgroundColor: 'var(--primary)',
                     borderRadius: '50%',
                     pointerEvents: 'none',
                     zIndex: 10000,
-                    x: mousePosition.x - 4,
-                    y: mousePosition.y - 4,
+                    x,
+                    y,
+                    translateX: '-50%',
+                    translateY: '-50%',
                 }}
             />
 
@@ -83,7 +86,7 @@ const CustomCursor = () => {
                     * {
                         cursor: auto !important;
                     }
-                    div[style*="zIndex: 9999"], div[style*="zIndex: 10000"] {
+                    .custom-cursor-container {
                         display: none !important;
                     }
                 }
