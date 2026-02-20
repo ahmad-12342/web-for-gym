@@ -1,13 +1,14 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import legendPic from '../assets/legend1.jpg';
 
 const legends = [
     {
-        name: "Ronnie Coleman",
-        title: "8x Mr. Olympia",
-        image: "https://images.unsplash.com/photo-1583454110551-21f2fa2adfcd?q=80&w=2070&auto=format&fit=crop",
-        quote: "Yeah Buddy! Light weight baby!"
+        name: "Fitness Elite",
+        title: "Arena Champion",
+        image: legendPic,
+        quote: "Your only limit is you. Push beyond boundaries."
     },
     {
         name: "Arnold Schwarzenegger",
