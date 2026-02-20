@@ -6,19 +6,19 @@ const legends = [
     {
         name: "Ronnie Coleman",
         title: "8x Mr. Olympia",
-        image: "https://images.unsplash.com/photo-1583454110551-21f2fa2adfcd?q=80&w=2070&auto=format&fit=crop",
+        image: "https://www.muscleandfitness.com/wp-content/uploads/2019/07/ronnie-coleman-treadmill.jpg?quality=86&strip=all",
         quote: "Yeah Buddy! Light weight baby!"
     },
     {
         name: "Arnold Schwarzenegger",
         title: "7x Mr. Olympia",
-        image: "https://images.unsplash.com/photo-1550345332-09e3ac987658?q=80&w=1887&auto=format&fit=crop",
+        image: "https://i.pinimg.com/736x/f9/ba/92/f9ba9292837f40149029a1b80267c134.jpg",
         quote: "The pump is one of the best feelings."
     },
     {
         name: "Jay Cutler",
         title: "4x Mr. Olympia",
-        image: "https://images.unsplash.com/photo-1532029837206-abbe2b7620e3?q=80&w=2070&auto=format&fit=crop",
+        image: "https://i.ytimg.com/vi/q7_6L0T0m54/maxresdefault.jpg",
         quote: "Victory is always possible."
     }
 ];
