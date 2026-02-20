@@ -7,7 +7,7 @@ const reviews = [
         name: "Ahmad Ansari",
         review: "This gym changed my life! The mentors and the vibe here are unmatched.",
         stars: 5,
-        image: "https://images.unsplash.com/photo-1506794778242-aff80849e756?q=80&w=1887&auto=format&fit=crop"
+        image: null
     },
     {
         name: "Hassan Khan",
