@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
     return (
@@ -35,17 +36,19 @@ const Hero = () => {
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: 0.8 }}
                 >
-                    <button style={{
-                        background: 'var(--primary)',
-                        color: 'black',
-                        padding: '1rem 3rem',
-                        fontSize: '1.2rem',
-                        borderRadius: '50px',
-                        textTransform: 'uppercase',
-                        boxShadow: '0 0 20px rgba(204, 255, 0, 0.4)'
-                    }}>
-                        Get Started
-                    </button>
+                    <Link to="/signup" style={{ display: 'inline-block' }}>
+                        <button style={{
+                            background: 'var(--primary)',
+                            color: 'black',
+                            padding: '1rem 3rem',
+                            fontSize: '1.2rem',
+                            borderRadius: '50px',
+                            textTransform: 'uppercase',
+                            boxShadow: '0 0 20px rgba(204, 255, 0, 0.4)'
+                        }}>
+                            Get Started
+                        </button>
+                    </Link>
                 </motion.div>
             </div>
         </section>
