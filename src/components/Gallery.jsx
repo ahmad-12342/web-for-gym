@@ -8,7 +8,7 @@ const images = [
     "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=2070&auto=format&fit=crop",
     "https://images.unsplash.com/photo-1593079831268-3381b0db4a77?q=80&w=2069&auto=format&fit=crop",
     "https://images.unsplash.com/photo-1571902943202-507ec2618e8f?q=80&w=1975&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1574673130244-c707e9d893f4?q=80&w=2070&auto=format&fit=crop"
+    "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=2070&auto=format&fit=crop"
 ];
 
 const Gallery = () => {
